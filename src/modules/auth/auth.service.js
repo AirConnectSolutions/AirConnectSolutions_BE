@@ -27,12 +27,12 @@ export const signupService = async (userData) => {
 
 //loginService
 export const loginService = async (loginData) => {
-  const { email, password } = loginData;
+  const { email, password, role } = loginData;
 
-  const user = await User.findOne({ email }).select("+password")
+  const user = await User.findOne({ email, role }).select("+password")
 
   if (!user) {
-    throw new AppError("invalid credential", 401)
+    throw new AppError("invalid credential or unauthorized role", 401)
   }
 
   const isPasswordCorrect = await bcrypt.compare(password, user.password)

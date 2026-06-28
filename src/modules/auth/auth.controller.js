@@ -18,12 +18,39 @@ export const signup = async (req, res, next) => {
 }
 
 //login
-export const login = async (req, res, next) => {
+// export const login = async (req, res, next) => {
+//   try {
+//     const data = await loginService(req.body)
+//     return res.status(200).json({
+//       succes: true,
+//       message: "login successfull",
+//       data
+//     })
+//   } catch (error) {
+//     next(error)
+//   }
+// }
+export const adminLogin = async (req, res, next) => {
   try {
-    const data = await loginService(req.body)
+    const data = await loginService({ ...req.body, role: "admin" })
     return res.status(200).json({
-      succes: true,
-      message: "login successfull",
+      success: true,
+      message: "Admin login successful",
+      data
+    })
+  } catch (error) {
+    next(error)
+  }
+}
+
+
+//  AGENT LOGIN 
+export const agentLogin = async (req, res, next) => {
+  try {
+    const data = await loginService({ ...req.body, role: "agent" })
+    return res.status(200).json({
+      success: true,
+      message: "Agent login successful",
       data
     })
   } catch (error) {
