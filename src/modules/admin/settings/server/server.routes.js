@@ -1,7 +1,7 @@
 import { createServer, getAllServers, getServerById, updateServer, deleteServer } from "./server.controller.js";
-import { validate } from "../../../middleware/validate.middleware.js";
+import { validate } from "../../../../middleware/validate.middleware.js";
 import { createServerValidation } from "./server.validation.js";
-import { authenticate } from "../../../middleware/auth.middleware.js";
+import { authenticate } from "../../../../middleware/auth.middleware.js";
 import express from "express";
 const router = express.Router()
 
