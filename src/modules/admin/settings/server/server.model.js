@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Counter from "../../../models/counter.model.js";
+import Counter from "../../../../models/counter.model.js";
 
 const serverSchema = new mongoose.Schema(
   {

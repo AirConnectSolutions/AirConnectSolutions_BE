@@ -1,7 +1,8 @@
 import express, { urlencoded } from "express";
 import errorMiddleware from "./middleware/error.middleware.js";
 import authRoutes from "./modules/auth/auth.routes.js";
-import serverRoutes from "./modules/admin/server/server.routes.js"
+import serverRoutes from "./modules/admin/settings/server/server.routes.js"
+import campaignRoutes from "./modules/admin/settings/Campaign/campaign.routes.js"
 import cors from "cors"
 
 const app = express();
@@ -22,8 +23,12 @@ app.get("/", (req, res) => {
   });
 });
 
+//auth
 app.use("/api/v1/auth", authRoutes);
+//server
 app.use("/api/v1/admin/server", serverRoutes)
+//campaign
+app.use("/api/v1/admin/campaign", campaignRoutes);
 
 // Global Error Handler
 app.use(errorMiddleware);

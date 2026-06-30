@@ -1,5 +1,5 @@
 import Server from "./server.model.js";
-import AppError from "../../../../utils/AppError.js";
+import AppError from "../../../../../utils/AppError.js";
 
 //newServer
 export const createServerService = async (serverData) => {
