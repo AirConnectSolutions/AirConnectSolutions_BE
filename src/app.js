@@ -2,7 +2,7 @@ import express, { urlencoded } from "express";
 import errorMiddleware from "./middleware/error.middleware.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 import serverRoutes from "./modules/admin/settings/server/server.routes.js"
-import campaignRoutes from "./modules/admin/settings/Campaign/campaign.routes.js"
+import campaignRoutes from "./modules/admin/telephony/Campaign/campaign.routes.js"
 import cors from "cors"
 
 const app = express();
